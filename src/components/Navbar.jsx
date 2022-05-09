@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+import { Search } from './Search';
+
+
 
 export const Navbar =  ({ setDarkTheme, darkTheme }) => {
     return (
@@ -10,6 +13,8 @@ export const Navbar =  ({ setDarkTheme, darkTheme }) => {
          <p className="text-2xl bg-blue-500 font-bold text-white py-1 px-2 rounded dark:bg-gray-50 dark:text-gray-900">
           Goggl 🔎
          </p> 
+        <Search />
+
         </Link>
            <button type="button" 
            onClick={() => setDarkTheme(!darkTheme)} 
