@@ -9,17 +9,29 @@ import { Loading } from './Loading';
 
 export const Results = () => {
     const { results, isLoading, getResults, searchTerm } = useResultContext();
-    const location = useLocation();
+    const location = useLocation(); 
+    
+    
+    useEffect(() => {
+        getResults(`/search/q=JavaScript Mastery&num=40`);
+    },[])
+
+
 
     if(isLoading) return <Loading />;
     console.log(location.pathname)
 
 switch (location.pathname) {
-    case '/search':
-        
-        return  'SEARCH'
 
-    default:
-        return 'ERROR'
+        case '/search':
+            return  'SEARCH'
+        case '/images':
+            return  'SEARCH'
+        case '/news':
+            return  'SEARCH'
+        case '/videos':
+            return  'SEARCH'
+        default:
+             return 'ERROR'
 }
 }
